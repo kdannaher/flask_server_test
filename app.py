@@ -1,10 +1,11 @@
 from flask import Flask,jsonify
 from flask import request
 from espn import EspnScrapper
+
 app = Flask(__name__)
 
 
-@app.route('/hello/', methods=['GET','POST'])
+@app.route('/', methods=['GET','POST'])
 def welcome():
     username = request.args.get('username')
     password = request.args.get('password')
@@ -29,4 +30,4 @@ def welcome():
     return jsonify(response_dict)
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=5050)
+    app.run()
