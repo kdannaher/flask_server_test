@@ -29,7 +29,7 @@ class EspnScrapper(object):
         #co.add_argument("--headless") # removes the browser gui
         co.add_argument("--log-level=3") # makes the log less talkative
         co.add_experimental_option("detach", True)
-        self.driver = webdriver.Chrome('./chromedriver', options = co)
+        self.driver = webdriver.Chrome('./chromedriver.exe', options = co)
         self.driver.get(self.domain)
         print("passed 4")
         print("Fantasy draft loaded at", self.driver.current_url)
